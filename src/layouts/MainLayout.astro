@@ -1,0 +1,463 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Discover TTR Cash Loan for quick, hassle-free micro-loans from R500 to R8000 with a 1-month repayment. Apply in-branch and get funds within 24 hours." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="" rel="canonical"/>
+<meta charset="utf-8"/>
+<meta content={description} name="description"/>
+<meta content="HELIX_ULTIMATE_GENERATOR_TEXT" name="generator"/>
+<title>{title}</title>
+<link href="/images/favicon.png" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="/media/vendor/joomla-custom-elements/css/joomla-alert.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link href="/components/com_sppagebuilder/assets/css/animate.min.css" rel="stylesheet">
+<link href="/components/com_sppagebuilder/assets/css/sppagebuilder.css" rel="stylesheet">
+<link href="/components/com_sppagebuilder/assets/css/magnific-popup.css" rel="stylesheet"/>
+<link href="/templates/finion/css/owl.carousel.min.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+<link href="/templates/finion/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/plugins/system/helixultimate/assets/css/system-j4.min.css" rel="stylesheet"/>
+<link href="/templates/finion/css/finatic-font.css" rel="stylesheet"/>
+<link href="/templates/finion/css/template.css" rel="stylesheet"/>
+<link href="/templates/finion/css/presets/preset1.css" rel="stylesheet"/>
+<slot name="head" />
+<style is:global>
+    #sp-header {
+        height: 85px !important;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1000;
+    }
+    #sp-header.header-sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .sp-megamenu-parent > li > a {
+        font-family: 'Inter', sans-serif;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: #333 !important; /* Back to Dark Gray */
+        padding: 0 !important;
+        transition: all 0.3s ease;
+    }
+    .sp-megamenu-parent > li {
+        margin-left: 35px !important;
+    }
+    .sp-megamenu-parent > li > a:hover {
+        color: #3f4094 !important; /* Back to Brand Blue */
+    }
+    .logo-ttr {
+        color: #3f4094;
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+    .logo-cash-loan {
+        color: #3f4094;
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: 8px;
+        line-height: 1;
+    }
+    .sp-megamenu-parent {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    /* Animated Hamburger & Mobile Menu */
+    .hamburger-menu {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: -10px;
+        outline: none;
+    }
+    .hamburger-box {
+        width: 24px;
+        height: 18px;
+        display: inline-block;
+        position: relative;
+    }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        width: 24px;
+        height: 2px;
+        background-color: #3f4094;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+    .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -1px;
+    }
+    .hamburger-inner::before, .hamburger-inner::after {
+        content: "";
+        display: block;
+    }
+    .hamburger-inner::before {
+        top: -8px;
+    }
+    .hamburger-inner::after {
+        bottom: -8px;
+    }
+    
+    /* Hamburger Active State (X) */
+    .hamburger-menu.is-active .hamburger-inner {
+        background-color: transparent;
+    }
+    .hamburger-menu.is-active .hamburger-inner::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.is-active .hamburger-inner::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-nav-dropdown {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        left: 15px;
+        background: #ffffff;
+        box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+        z-index: 1000;
+        border-radius: 12px;
+        padding: 10px 0;
+        margin-top: 15px;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    .mobile-nav-dropdown.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .mobile-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-menu li {
+        display: block;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .mobile-menu li:last-child {
+        border-bottom: none;
+    }
+    .mobile-menu li a {
+        display: block;
+        padding: 12px 25px;
+        color: #555;
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+    .mobile-menu li a:hover {
+        background: #fdfdfd;
+        color: #3f4094;
+        padding-left: 30px; /* Slide effect */
+    }
+    /* Add a small indicator for hover */
+    .mobile-menu li a:hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #3f4094;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+</style>
+<style>.sp-contact-info {
+    display: block;
+    margin-top: 15px;
+}
+#sp-header #sppb-addon-1718354739987 .sppb-addon-header .sppb-addon-title {
+display: none;
+}
+#sp-header.header-sticky #sppb-addon-1718354739987 .sppb-addon-header .sppb-addon-title {
+display: block;
+}
+.sp-page-title .sp-page-title-sub-heading {
+    color: #333333;
+}
+@media (max-width: 767px) {
+    body {
+        font-size: 14px !important;
+    }
+}
+.sp-contact-info li {
+    margin-bottom: 7px;
+}
+#sp-menu>div .sp-module {
+    order: 1 !important;
+}
+@media (max-width: 767px) {
+.logo-image {
+    height: 70px !important;
+}
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #3f4094;
+  outline: 1px solid #3f4094;
+  border-radius: 300px;
+}
+body{font-family: 'Inter', sans-serif;font-size: 16px;font-weight: 400;text-decoration: none;}
+@media (min-width:768px) and (max-width:991px){body{font-size: 14px;}
+}
+@media (max-width:767px){body{font-size: 13px;}
+}
+h1{font-family: 'Poppins', sans-serif;font-size: 67px;font-weight: 700;text-decoration: none;}
+@media (min-width:768px) and (max-width:991px){h1{font-size: 55px;}
+}
+@media (max-width:767px){h1{font-size: 40px;}
+}
+h2{font-family: 'Poppins', sans-serif;font-size: 16px;font-weight: 300;text-decoration: none;}
+@media (max-width:767px){h2{font-size: 14px;}
+}
+h3{font-family: 'Poppins', sans-serif;font-size: 37px;font-weight: 700;text-decoration: none;}
+@media (min-width:768px) and (max-width:991px){h3{font-size: 32px;}
+}
+@media (max-width:767px){h3{font-size: 22px;}
+}
+h4{font-family: 'Poppins', sans-serif;font-size: 28px;text-decoration: none;}
+.sp-megamenu-parent > li > a, .sp-megamenu-parent > li > span, .sp-megamenu-parent .sp-dropdown li.sp-menu-item > a{font-family: 'Inter', sans-serif;font-size: 14px;font-weight: 700;text-decoration: none;}
+@media (max-width:767px){.sp-megamenu-parent > li > a, .sp-megamenu-parent > li > span, .sp-megamenu-parent .sp-dropdown li.sp-menu-item > a{font-size: 13px;}
+}
+.menu.nav-pills > li > a, .menu.nav-pills > li > span, .menu.nav-pills .sp-dropdown li.sp-menu-item > a{font-family: 'Inter', sans-serif;font-size: 14px;font-weight: 700;text-decoration: none;}
+@media (max-width:767px){.menu.nav-pills > li > a, .menu.nav-pills > li > span, .menu.nav-pills .sp-dropdown li.sp-menu-item > a{font-size: 13px;}
+}
+.sppb-animated-number, .slider-video-popup .sppb-modal-selector .text .subtext, .sppb-testimonial-pro .sppb-testimonial-message, .sppb-addon-accordion .sppb-panel-faq > .sppb-panel-heading .sppb-panel-title,.finatic-advance-tab .sppb-nav-tabs > li > a , .sppb-addon-person .sppb-person-name,#login .login-info-wrapper h2, html.error-page .error-code, .sp-megamenu-parent .item-header, .case-studies .articles-leading .article .article-header h1, .case-studies .articles-leading .article .article-header h2, ul.pagination .page-item .page-link, .view-article .article-details.case-studies .article-info .createdby, .view-article .article-details.case-studies .article-info .category-name, .view-article .article-details.case-studies .article-info .hits{font-family: 'Poppins', sans-serif;text-decoration: none;}
+.logo-ttr {
+    color: #3f4094;
+    font-family: 'Inter', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1;
+}
+.logo-cash-loan {
+    color: #3f4094;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 6px;
+    line-height: 1;
+}
+#sp-header { 
+    background: #ffffff !important;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+#sp-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.sp-megamenu-parent {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.sp-megamenu-parent > li {
+    margin-left: 35px;
+}
+.sp-megamenu-parent > li > a {
+    color: #333 !important;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+.sp-megamenu-parent > li > a:hover {
+    color: #3f4094 !important;
+}
+</style>
+<slot name="head" />
+</head>
+<body class="site hu com_sppagebuilder view-page layout-default task-none itemid-101 en-gb ltr layout-fluid">
+<div class="sp-preloader"><div></div></div>
+<div class="body-wrapper">
+<div class="body-innerwrapper">
+<header id="sp-header">
+    <div class="container">
+        <div class="row align-items-center" style="margin: 0;">
+            <div class="col-3 col-lg-3" id="sp-logo">
+                <div class="logo">
+                     <a href="/" style="text-decoration: none; display: flex; align-items: baseline;">
+                        <span class="logo-ttr">TTR</span>
+                        <span class="logo-cash-loan">Cash Loan</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-9 col-lg-9" id="sp-menu">
+                <nav class="sp-megamenu-wrapper" role="navigation">
+                    <button class="hamburger-menu d-block d-lg-none" aria-label="Toggle navigation" id="mobile-menu-toggle">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-flex">
+                        <li class="sp-menu-item"><a href="/">Home</a></li>
+                        <li class="sp-menu-item"><a href="/about">About</a></li>
+                        <li class="sp-menu-item"><a href="/our-services">Our Services</a></li>
+                        <li class="sp-menu-item"><a href="/f-a-q">FAQ</a></li>
+                        <li class="sp-menu-item"><a href="/contact">Contact</a></li>
+                    </ul>
+                    <div id="mobile-nav-dropdown" class="mobile-nav-dropdown d-lg-none">
+                        <ul class="mobile-menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/our-services">Our Services</a></li>
+                            <li><a href="/f-a-q">FAQ</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<slot />
+
+<section id="sp-bottom">
+<div class="container">
+<div class="container-inner">
+<div class="row">
+<div class="col-12 col-md-3 col-lg-4" id="sp-bottom1"><div class="sp-column"><div class="sp-module"><div class="sp-module-content"><div class="mod-sppagebuilder sp-page-builder" data-module_id="107">
+<div class="page-content">
+<section class="sppb-section" id="section-id-1566281697224"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-col-md-12" id="column-wrap-id-1566281697223"><div class="sppb-column" id="column-id-1566281697223"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-image" id="sppb-addon-wrapper-1566281697227"><div class="clearfix" id="sppb-addon-1566281697227"><div class="sppb-addon sppb-addon-single-image sppb-addon-image-shape"><div class="sppb-addon-content"><div class="sppb-addon-single-image-container"><a href="/" style="text-decoration: none; display: flex; align-items: baseline;">
+    <span class="logo-ttr">TTR</span>
+    <span class="logo-cash-loan">Cash Loan</span>
+</a></div></div></div><style type="text/css">#sppb-addon-1566281697227{border-radius: 0px;}#sppb-addon-wrapper-1566281697227{margin-top: -5px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;}@media (max-width: 991.98px) {#sppb-addon-wrapper-1566281697227{margin-top: 0px;margin-right: 0px;margin-bottom: 20px;margin-left: 0px;}}@media (max-width: 767.98px) {#sppb-addon-wrapper-1566281697227{margin-top: 0px;margin-right: 0px;margin-bottom: 10px;margin-left: 0px;}}#sppb-addon-1566281697227 img{width: 200px;max-width: 200px;border-radius: 0px;}#sppb-addon-1566281697227{text-align: left;}</style></div></div><div class="sppb-addon-wrapper addon-root-text-block" id="sppb-addon-wrapper-1566281755377"><div class="clearfix" id="sppb-addon-1566281755377"><div class="sppb-addon sppb-addon-text-block"><div class="sppb-addon-content">
+<p>TTR Cash Loan provides accessible and transparent short-term loan solutions to residents across South Africa, tailored to meet your immediate financial needs.</p>
+</div></div><style type="text/css">#sppb-addon-1566281755377{box-shadow: 0 0 0 0 #ffffff;border-radius: 0px;}#sppb-addon-wrapper-1566281755377{margin: 0 0 10px 0;}#sppb-addon-1566281755377 .sppb-addon-text-block{text-align: left;}</style></div></div></div></div></div></div></div></section></div>
+</div></div></div></div></div><div class="col-6 col-md-3 col-lg-2" id="sp-bottom2"><div class="sp-column"><div class="sp-module"><h3 class="sp-module-title">Solutions</h3><div class="sp-module-content"><ul class="menu">
+<li class="item-171"><a href="/">Home</a></li><li class="item-172"><a href="/about">About Us</a></li><li class="item-173"><a href="/our-services">Services</a></li></ul>
+</div></div></div></div><div class="col-6 col-md-3 col-lg-2" id="sp-bottom3"><div class="sp-column"><div class="sp-module"><h3 class="sp-module-title">About Us</h3><div class="sp-module-content"><ul class="menu">
+<li class="item-175"><a href="/contact">Contact Us</a></li><li class="item-174"><a href="/f-a-q">Frequently Asked Questions</a></li></ul>
+</div></div></div></div><div class="col-12 col-md-3 col-lg-4" id="sp-bottom4"><div class="sp-column"><div class="sp-module"><div class="sp-module-content"><div class="mod-sppagebuilder sp-page-builder" data-module_id="109">
+<div class="page-content">
+<section class="sppb-section" id="section-id-1566286198683"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-col-md-12" id="column-wrap-id-1566286198682"><div class="sppb-column" id="column-id-1566286198682"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-heading" id="sppb-addon-wrapper-1566288394022"><div class="clearfix" id="sppb-addon-1566288394022"><div class="sppb-addon sppb-addon-header text-dark-color"><p class="sppb-addon-title">Registered with NCR, registration nr NCR123456</p></div><style type="text/css">#sppb-addon-1566288394022{box-shadow: 0 0 0 0 #ffffff;border-radius: 0px;}#sppb-addon-wrapper-1566288394022{margin: 0 0 15px 0;}@media (max-width: 767.98px) {#sppb-addon-wrapper-1566288394022{margin-bottom: 5px;}}#sppb-addon-1566288394022 .sppb-addon-header .sppb-addon-title{font-size: 16px;line-height: 22px;letter-spacing: 0px;}@media (max-width: 767.98px) {#sppb-addon-1566288394022 .sppb-addon-header .sppb-addon-title{font-size: 14px;line-height: 20px;}}#sppb-addon-1566288394022 .sppb-addon.sppb-addon-header{text-align: left;}#sppb-addon-1566288394022 .sppb-addon-header .sppb-addon-title{margin: 0;padding: 0;}</style></div></div></div></div></div></div></div></section></div>
+</div></div></div></div></div></div>
+</div>
+</div>
+</section>
+<footer id="sp-footer">
+<div class="container">
+<div class="container-inner">
+<div class="row">
+<div class="col-md-6 col-lg-6" id="sp-footer1"><div class="sp-column"><span class="sp-copyright">© 2026 TTR Cash Loan. All Rights Reserved.</span></div></div><div class="col-md-6 col-lg-6" id="sp-footer2"><div class="sp-column"><div class="sp-module"><div class="sp-module-content"><div class="mod-sppagebuilder sp-page-builder" data-module_id="142">
+<div class="page-content">
+<section class="sppb-section" id="section-id-1718350722493"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-row-column" id="column-wrap-id-1718350722492"><div class="sppb-column" id="column-id-1718350722492"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-text-block" id="sppb-addon-wrapper-1718350730790"><div class="clearfix" id="sppb-addon-1718350730790"><div class="sppb-addon sppb-addon-text-block"><div class="sppb-addon-content"><p> Website designed by <a href="https://hcweb.co.za/" rel="_blank" target="_blank">HC WEB</a></p></div></div><style type="text/css">#sppb-addon-1718350730790 a {
+	color: #828282;
+}</style></div></div></div></div></div></div></div></section></div>
+</div></div></div></div></div></div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script is:inline src="/media/system/js/core.min.js"></script>
+<script is:inline defer src="/media/system/js/showon-es5.min.js" nomodule></script>
+<script is:inline defer src="/media/system/js/messages-es5.min.js" nomodule></script>
+<script is:inline src="/media/vendor/jquery/js/jquery.min.js"></script>
+<script is:inline src="/media/legacy/js/jquery-noconflict.min.js"></script>
+<script is:inline src="/media/system/js/showon.min.js" type="module"></script>
+<script is:inline src="/media/system/js/messages.min.js" type="module"></script>
+<script is:inline src="/components/com_sppagebuilder/assets/js/common.js"></script>
+<script is:inline src="/components/com_sppagebuilder/assets/js/jquery.parallax.js"></script>
+<script is:inline defer src="/components/com_sppagebuilder/assets/js/sppagebuilder.js"></script>
+<script is:inline src="/components/com_sppagebuilder/assets/js/addons/text_block.js"></script>
+<script is:inline src="/components/com_sppagebuilder/assets/js/jquery.magnific-popup.min.js"></script>
+<script is:inline src="/components/com_sppagebuilder/assets/js/addons/image.js"></script>
+<script is:inline src="/templates/finion/js/owl.carousel.min.js"></script>
+<script is:inline src="/templates/finion/js/addon.slider.js"></script>
+<script is:inline src="/templates/finion/js/main.js"></script>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const dropdown = document.getElementById('mobile-nav-dropdown');
+        
+        if (toggle && dropdown) {
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggle.classList.toggle('is-active');
+                dropdown.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                    toggle.classList.remove('is-active');
+                }
+            });
+            
+            // Close menu when clicking a link
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdown.classList.remove('active');
+                    toggle.classList.remove('is-active');
+                });
+            });
+        }
+    });
+</script>
+<slot name="scripts" />
+</body>
+</html>

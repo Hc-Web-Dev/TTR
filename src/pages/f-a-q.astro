@@ -1,0 +1,370 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout 
+  title="FAQ – TTR Cash Loan"
+  description="Browse our FAQs to find quick and clear information about our loan process, eligibility, repayments, and more."
+>
+  <style is:inline>
+    /* Accordion Styles */
+    .ttr-faq-panel {
+        margin-bottom: 10px;
+    }
+    
+    .ttr-faq-heading {
+        width: 100%;
+        text-align: left;
+        padding: 18px 25px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    .ttr-faq-heading:hover {
+        background: #f8f8f8;
+        border-color: #d1d1d1;
+    }
+    .ttr-faq-heading.active {
+        background-color: #3f4094;
+        color: #fff;
+        border-color: #3f4094;
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .ttr-faq-content {
+        display: none;
+        padding: 25px;
+        border: 1px solid #e5e5e5;
+        border-top: none;
+        margin-top: 0;
+        margin-bottom: 15px;
+        background: #fff;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        line-height: 1.6;
+        color: #555;
+    }
+    .ttr-faq-content.show {
+        display: block;
+        animation: fadeIn 0.4s ease-out;
+    }
+    .ttr-faq-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .ttr-faq-icon {
+        font-size: 14px;
+        transition: transform 0.3s;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* CTA Section Styles */
+    .cta-section {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        border-radius: 8px;
+    }
+    .cta-section h3 {
+        color: #3f4094;
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 28px;
+    }
+    .cta-section p {
+        margin-bottom: 30px;
+        color: #666;
+        font-size: 18px;
+    }
+    .btn-contact {
+        background-color: #3f4094;
+        color: #fff;
+        padding: 12px 35px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+        display: inline-block;
+    }
+    .btn-contact:hover {
+        background-color: #2e2f7a;
+        color: #fff;
+        text-decoration: none;
+    }
+    .link-color { color: #3f4094; font-weight: 600; }
+  </style>
+  
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const triggers = document.querySelectorAll('.ttr-faq-heading');
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation(); // Stop SP Page Builder from interfering
+                
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const contentId = this.getAttribute('aria-controls');
+                const content = document.getElementById(contentId);
+                const icon = this.querySelector('.fa');
+
+                // Close all others
+                document.querySelectorAll('.ttr-faq-heading.active').forEach(activeTrigger => {
+                   if (activeTrigger !== this) {
+                       activeTrigger.setAttribute('aria-expanded', 'false');
+                       activeTrigger.classList.remove('active');
+                       const otherContentId = activeTrigger.getAttribute('aria-controls');
+                       const otherContent = document.getElementById(otherContentId);
+                       if (otherContent) {
+                           otherContent.style.display = 'none';
+                           otherContent.classList.remove('show');
+                       }
+                       const otherIcon = activeTrigger.querySelector('.fa');
+                       if (otherIcon) {
+                           otherIcon.classList.remove('fa-chevron-down');
+                           otherIcon.classList.add('fa-chevron-right');
+                       }
+                   }
+                });
+
+                // Toggle current
+                const newState = !isExpanded;
+                this.setAttribute('aria-expanded', newState);
+                
+                if (newState) {
+                    this.classList.add('active');
+                    if (content) {
+                        content.style.display = 'block';
+                        content.classList.add('show');
+                    }
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-right');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                } else {
+                    this.classList.remove('active');
+                    if (content) {
+                        content.style.display = 'none';
+                        content.classList.remove('show');
+                    }
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-right');
+                    }
+                }
+            });
+        });
+    });
+  </script>
+
+  <section id="sp-section-1">
+    <div class="row">
+      <div class="col-lg-12" id="sp-title">
+        <div class="sp-column">
+          <div class="sp-page-title">
+            <div class="container">
+              <h1 class="sp-page-title-heading">Customer Queries and Answers</h1>
+              <h2 class="sp-page-title-sub-heading">
+                We’ve got answers. Browse our FAQs to find quick and clear information about our loan process, eligibility, repayments, and more—tailored for South Africans.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sp-main-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="text-align: center; margin: 60px 0 40px;">
+                    <h2 style="font-size: 36px; font-weight: 700; color: #333; margin-bottom: 20px;">Frequently Asked <span style="color: #3f4094;">Questions</span></h2>
+                    <p style="font-size: 18px; color: #666; max-width: 800px; margin: 0 auto; line-height: 1.6;">Below are the most common questions we receive at our branches. If you don’t find what you’re looking for, feel free to contact us—our team is happy to help.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-6">
+                <!-- Who can apply -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq1" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Who can apply for a loan at TTR Cash Loan?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq1" class="ttr-faq-content">
+                        <p>Any South African citizen or permanent resident aged 18 or older with a steady income can apply for a loan at any of our 12 branches.</p>
+                    </div>
+                </div>
+                
+                <!-- Documents -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq2" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">What documents do I need to apply?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq2" class="ttr-faq-content">
+                        <p>To apply in-branch, please bring:</p>
+                        <ul style="padding-left: 20px; list-style-type: disc; margin-bottom: 0;">
+                            <li>A valid South African ID</li>
+                            <li>Proof of income (latest payslip or bank statement)</li>
+                            <li>Recent bank statements</li>
+                            <li>Proof of address</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- How much -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq3" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">How much can I borrow?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq3" class="ttr-faq-content">
+                        <p>You can borrow between R500 and R8,000, depending on your affordability and credit profile.</p>
+                    </div>
+                </div>
+
+                <!-- Duration -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq4" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">How long does the application take?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq4" class="ttr-faq-content">
+                        <p>Most in-branch applications are completed in under 15 minutes.</p>
+                    </div>
+                </div>
+
+                <!-- Credit checks -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq5" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Do you perform credit checks?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq5" class="ttr-faq-content">
+                        <p>Yes. We conduct responsible credit checks and affordability assessments in line with South African lending regulations.</p>
+                    </div>
+                </div>
+
+                <!-- When receive money -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq6" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">When will I receive my money?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq6" class="ttr-faq-content">
+                        <p>Once approved, your funds are usually paid into your bank account within 24 hours.</p>
+                    </div>
+                </div>
+
+                <!-- Hidden fees -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq7" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Are there any hidden fees?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq7" class="ttr-faq-content">
+                        <p>No. All fees, interest, and repayment terms are clearly explained before you sign. We believe in simple, transparent lending.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-6">
+                <!-- Bank account -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq8" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Do I need a bank account?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq8" class="ttr-faq-content">
+                        <p>Yes, a valid South African bank account is required to receive your funds and for repayments.</p>
+                    </div>
+                </div>
+
+                <!-- Repayments -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq9" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">How do repayments work?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq9" class="ttr-faq-content">
+                        <p>Repayments are made via DebiCheck or debit order on agreed dates. Your consultant will explain your full repayment schedule before you accept the loan.</p>
+                    </div>
+                </div>
+
+                <!-- Bad credit -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq10" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Can I apply if I have bad credit?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq10" class="ttr-faq-content">
+                        <p>Yes. We look at more than just your credit score. Each application is assessed individually and responsibly.</p>
+                    </div>
+                </div>
+
+                <!-- Multiple loans -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq11" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Can I apply for another loan if I already have one?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq11" class="ttr-faq-content">
+                        <p>Each application is reviewed independently. Approval depends on affordability and your current repayment status.</p>
+                    </div>
+                </div>
+
+                <!-- Registered -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq12" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Is TTR Cash Loan registered and legal?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq12" class="ttr-faq-content">
+                        <p>Yes. We operate in compliance with South African credit regulations and follow responsible lending practices.</p>
+                    </div>
+                </div>
+
+                <!-- Locations -->
+                <div class="ttr-faq-panel">
+                    <button aria-controls="faq13" aria-expanded="false" class="ttr-faq-heading">
+                        <span class="ttr-faq-title">Where are your branches located?</span>
+                        <span class="ttr-faq-icon"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+                    <div id="faq13" class="ttr-faq-content">
+                        <p>We have 12 branches across South Africa. Visit our <a href="/contact" class="link-color">Contact page</a> to find your nearest office.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Still have questions?</h3>
+            <p>Our friendly team is ready to help you in person.</p>
+            <a href="/contact" class="btn-contact">Contact Us</a>
+        </div>
+    </div>
+  </section>
+</MainLayout>
+
+
+

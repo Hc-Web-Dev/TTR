@@ -1,0 +1,299 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout 
+  title="Contact TTR Cash Loan for Expert Short-Term Loan Assistance"
+  description="Have questions or need assistance? Visit one of our 12 branches across the Eastern and Northern Cape or get in touch below."
+>
+  <style>
+    /* Global Section Setups */
+    .contact-page-container {
+      background: #f9f9f9;
+      font-family: 'Inter', sans-serif;
+      padding-bottom: 0;
+    }
+
+    /* Hero */
+    .contact-hero {
+      background: #fff;
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    .contact-hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 42px;
+        font-weight: 400; /* Lighter weight like image */
+        color: #333;
+        margin-bottom: 15px;
+    }
+    .contact-hero p {
+        font-size: 16px;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Main Content Area */
+    .contact-main {
+      padding: 40px 0 80px;
+      background: #f9f9f9;
+    }
+
+    /* Left Column: Form */
+    .form-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .form-header h2 span {
+      color: #3f4094; /* Brand Blue */
+    }
+    
+    /* Form Controls: Sharp edges as requested */
+    .custom-form .form-control {
+      background: #fff;
+      border: 1px solid #ccc;  
+      color: #333;
+      padding: 15px;
+      border-radius: 0 !important; /* Sharp edges */
+      margin-bottom: 20px;
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box; 
+    }
+
+    .custom-form .form-control:focus {
+      border-color: #3f4094;
+      outline: none;
+      box-shadow: none;
+    }
+    
+    .btn-submit {
+      background: #3f4094;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 0 !important; /* Sharp edges */
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: auto;
+      display: inline-block;
+    }
+    .btn-submit:hover {
+      background: #2a2b6e;
+    }
+
+    /* Right Column: Info */
+    .info-block {
+      margin-bottom: 40px;
+    }
+    .info-label {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 5px;
+      font-family: 'Inter', sans-serif;
+    }
+    .info-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+    .info-value.email {
+      font-size: 18px; /* Slightly smaller for long emails */
+      word-break: break-all;
+    }
+
+    /* Map Section */
+    .map-section {
+      position: relative;
+      height: 400px;
+      width: 100%;
+    }
+    .map-section iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(0%);
+    }
+    .map-card {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      background: #fff;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      border-radius: 0 !important; /* Sharp edges */
+      z-index: 10;
+    }
+    .map-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .map-icon-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+    .map-icon-row i {
+      color: #3f4094;
+      margin-right: 15px;
+      margin-top: 3px;
+    }
+    
+    /* Bootstrap Grid Tweaks */
+    .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; box-sizing: border-box; }
+    .col-md-6, .col-lg-7, .col-lg-5 { position: relative; width: 100%; padding-right: 15px; padding-left: 15px; box-sizing: border-box; }
+    
+    @media (min-width: 768px) {
+        .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    }
+    @media (min-width: 992px) {
+        .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+        .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    }
+
+    @media (max-width: 768px) {
+        .map-card {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 100%;
+            margin-bottom: 0;
+            box-shadow: none;
+            border-bottom: 1px solid #eee;
+        }
+    }
+  </style>
+
+  <div class="contact-page-container">
+    <!-- Hero Header -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch for Expert Financial Assistance</h1>
+            <p>Have questions or need assistance with your loan application? Our dedicated team at TTR Cash Loan is here to help.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column: Form -->
+                <div class="col-lg-7">
+                    <div class="form-header">
+                        <h2>Send us <span>an email</span></h2>
+                    </div>
+                    <form class="custom-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name" placeholder="Full Name *" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" placeholder="Email *" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control" name="client_status">
+                                    <option value="" disabled selected>Are you a new client?</option>
+                                    <option value="New Client">New Client</option>
+                                    <option value="Existing Client">Existing Client</option>
+                                </select>
+                            </div>
+                        </div>
+                        <textarea class="form-control" name="message" rows="6" placeholder="Write your message..." required></textarea>
+                        
+                        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Info -->
+                <div class="col-lg-5" style="padding-left: 50px;">
+                    <br><br>
+                    <div class="info-block">
+                        <div class="info-label">Call Us</div>
+                        <div class="info-value">000 000 0000</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-label">Email</div>
+                        <div class="info-value email">info@yourdomain.co.za</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-card">
+            <h4>FIND US NOW!</h4>
+            <div class="map-icon-row">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Servicing clients throughout<br>South Africa</span>
+            </div>
+            <div class="map-icon-row">
+                <i class="fas fa-envelope"></i>
+                <span>info@yourdomain.co.za</span>
+            </div>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3310.899813289901!2d25.5!3d-33.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1716900000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- 12 Branches Grid - Kept below map as extra info -->
+    <section style="background: #fff; padding: 60px 0;">
+        <div class="container">
+            <h3 style="text-align:center; margin-bottom: 40px; font-family: 'Poppins',sans-serif; font-weight:700;">Our 12 Locations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Gqeberha HQ</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Uitenhage</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Grahamstown</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Graaff-Reinet</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>East London</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>King Williams Town</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Butterworth</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Somerset East</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Bizana</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Ngcobo</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Matatiele</strong><br><small>Eastern Cape</small></div>
+                <div style="border: 1px solid #eee; padding: 15px;"><strong>Kuruman</strong><br><small>Northern Cape</small></div>
+            </div>
+        </div>
+    </section>
+
+  </div>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent.');
+            this.reset();
+        });
+    </script>
+  </Fragment>
+</MainLayout>
+
+
+

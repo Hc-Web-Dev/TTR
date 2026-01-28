@@ -1,0 +1,300 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="About TTR Cash Loan | Your Partner in Quick Financial Solutions"
+  description="Discover TTR Cash Loan, your reliable provider of short-term loans from R500 to R8000 in South Africa. We focus on transparency and efficiency."
+>
+  <style>
+    /* Global Styles - Clean & Minimal */
+    .about-page-container {
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      background: #f9f9f9;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+    
+    /* Hero Section - Matching Contact Page White Style */
+    .about-hero {
+      background: #fff;
+      padding: 80px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .about-hero h1 {
+      font-size: 42px;
+      font-weight: 400; /* Lighter weight for elegance */
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .about-hero p {
+        font-size: 16px;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* "Who We Are" Section */
+    .section-who-we-are {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .text-content h2 {
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .text-content h2 span {
+        color: #333; /* Kept dark for professionalism, minimal color usage */
+    }
+    .text-content p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #666;
+    }
+    .highlight-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        border-left: 3px solid #333; /* Dark grey border instead of color */
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+    }
+
+    /* Mission & Vision Cards - Minimalist */
+    .section-mission-vision {
+      padding: 80px 0;
+      background: #f9f9f9;
+    }
+    .mv-card {
+      background: #fff;
+      padding: 40px;
+      height: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Very subtle shadow */
+      border: 1px solid #eee; /* Sharp border */
+      border-radius: 0; /* Sharp edges */
+    }
+    .mv-icon {
+        font-size: 32px;
+        color: #3f4094; /* Only small accent color */
+        margin-bottom: 20px;
+    }
+    .mv-card h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .mv-card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Values Grid - Minimalist */
+    .section-values {
+        padding: 80px 0;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .section-header h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    .value-item {
+        text-align: left; /* Professional list style */
+        padding: 20px;
+        /* No border, just clean layout */
+    }
+    .value-icon {
+        width: 50px;
+        height: 50px;
+        background: #f4f6f8; /* Grey bg */
+        color: #333; /* Dark icon */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+        border-radius: 0; /* Square icons */
+    }
+    .value-item h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .value-item p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Bottom CTA - Dark & Professional */
+    .cta-strip {
+        background: #333; /* Dark Grey instead of Brand Blue for more "corporate" feel */
+        padding: 60px 0;
+        text-align: center;
+        color: #fff;
+    }
+    .cta-strip h2 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    .cta-strip p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        color: #ccc;
+    }
+    .btn-white-square {
+        display: inline-block;
+        background: #fff;
+        color: #333;
+        padding: 15px 40px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        letter-spacing: 1px;
+        border: none;
+    }
+    .btn-white-square:hover {
+        background: #ddd;
+        color: #000;
+    }
+    
+    /* Bootstrap Grid Tweaks */
+    .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+    .col-md-6, .col-lg-6, .col-lg-3, .col-md-6-resp { position: relative; width: 100%; padding-right: 15px; padding-left: 15px; }
+    
+    @media (min-width: 768px) {
+        .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-md-6-resp { flex: 0 0 50%; max-width: 50%; }
+    }
+    @media (min-width: 992px) {
+        .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    }
+  </style>
+
+  <div class="about-page-container">
+    
+    <!-- Hero Header - Minimal White -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About TTR Cash Loan</h1>
+            <p>Building a future of financial inclusion and reliable support.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="section-who-we-are">
+        <div class="container">
+            <div class="row" style="align-items: center;">
+                <div class="col-lg-6">
+                    <div class="text-content">
+                        <h2>Your Trusted Financial Partner</h2>
+                        <p>TTR Cash Loan is a registered credit provider dedicated to offering simple, fast, and ethical micro-finance solutions. With 12 branches across South Africa, we specialize in short-term loans ranging from R500 to R8,000.</p>
+                        <div class="highlight-text">
+                            "Our focus is on helping hard-working individuals bridge cash flow gaps with dignity and transparency."
+                        </div>
+                        <p>We believe in responsible lending that empowers our clients to handle emergencies, education costs, and life’s unexpected turns. We are here to ensure that no one is left behind due to a temporary lack of funds.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Clean, desaturated image -->
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop" alt="Office Environment" style="width: 100%; filter: saturate(0.8);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section-mission-vision">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>Our mission is to provide accessible credit to those who need it most, without the red tape. We strive to be the bridge that helps you cross financial gaps quickly, treating every client with the respect and urgency they deserve.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>We envision becoming South Africa’s most reliable community-focused micro-lender. By combining traditional face-to-face branch service with modern processing efficiency, we aim to set the gold standard for trust and speed in the short-term loan industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values - Clean Grid -->
+    <section class="section-values">
+        <div class="container">
+            <div class="section-header">
+                <h2>The TTR Promise</h2>
+                <p style="color: #888;">Our core values define every interaction we have with you.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6-resp">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Integrity</h4>
+                        <p>Fair terms, no hidden fees, and full NCR compliance in every deal.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6-resp">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Speed</h4>
+                        <p>In-branch approvals and fast payouts (often within 24 hours).</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6-resp">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Accessibility</h4>
+                        <p>12 convenient locations and friendly, person-to-person service.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6-resp">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h4>Responsibility</h4>
+                        <p>We only lend what you can afford to repay. Ethical lending always.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action - Dark minimalist -->
+    <section class="cta-strip">
+        <div class="container">
+            <h2>Ready to get started?</h2>
+            <p>Visit any of our branches today for a quick consultation.</p>
+            <a href="/contact" class="btn-white-square">FIND A BRANCH</a>
+        </div>
+    </section>
+
+  </div>
+</MainLayout>
+
+
+
